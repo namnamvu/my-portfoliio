@@ -26,3 +26,13 @@ function addRandomGreeting() {
   const greetingContainer = document.getElementById('greeting-container');
   greetingContainer.innerText = greeting;
 }
+function addMovieQuote(){
+    const quotes = ['May the force be with you', 'My Suits Are On The House, Or The House Burns Down.', 'Everyone is A Whore, Grace. We Just Sell Different Parts Of Ourselves', 'Show me the money','Already Broken.'];
+
+    //Pick a random quote
+    const quote = quotes[Math.floor(Math.random()* quotes.length)];
+
+    // Add it to the page
+    const quoteContainer = document.getElementById('quote-container');
+    quoteContainer.innerText = quote;
+}
