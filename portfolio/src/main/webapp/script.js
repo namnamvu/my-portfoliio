@@ -27,7 +27,7 @@ function addRandomGreeting() {
   greetingContainer.innerText = greeting;
 }
 function addMovieQuote(){
-    const quotes = ['May the force be with you', 'My Suits Are On The House, Or The House Burns Down.', 'Everyone is A Whore, Grace. We Just Sell Different Parts Of Ourselves', 'Show me the money','Already Broken.'];
+    const quotes = ['May the force be with you', 'My Suits Are On The House, Or The House Burns Down.', 'Well, nobody is perfect.', 'Show me the money','Already Broken.'];
 
     //Pick a random quote
     const quote = quotes[Math.floor(Math.random()* quotes.length)];
