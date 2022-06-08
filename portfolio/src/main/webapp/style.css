@@ -8,6 +8,13 @@
   margin-top: 20px;
 }
 
+#quote-container {
+    margin-top: 20px;
+}
+
+body {
+    background-color: #EAD2A8;
+}
 img {
     width: 200px;
     height: 300px;
