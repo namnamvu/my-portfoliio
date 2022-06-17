@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <title>My Portfolio</title>
@@ -7,28 +7,40 @@
     <script src="script.js"></script>
   </head>
   <body>
-    <div id="content">
+    <div class="main">
       <!-- Add all Link at the top of the page -->
-      <div class="Link">
-        <a href="https://www.linkedin.com/in/nam-vu-07a2a3234/" target="_blank"
-          >LinkedIn
-        </a>
-        <a href="https://github.com/namnamvu" target="_blank">GitHub</a>
-        <a href="images/me1.jpg" target="_blank">Gallery</a>
-        <a href="mailto:nvu1@fandm.edu">Email</a>
-        <a href="">About</a>
-      </div>
+      <nav>
+        <h2 class="logo"><span style="color: aqua">Port</span>folio</h2>
+        <ul>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/nam-vu-07a2a3234/"
+              target="_blank"
+              >LinkedIn
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/namnamvu" target="_blank">GitHub</a>
+          </li>
+          <li><a href="images/me1.jpg" target="_blank">Gallery</a></li>
+          <li><a href="mailto:nvu1@fandm.edu">Email</a></li>
+          <li><a href="">About</a></li>
+        </ul>
+      </nav>
+
       <img src="images/me1.jpg" alt="Me in New York" />
-      <h1>NAM <br />VU</h1>
-      <hr />
-      <p>
-        An aspiring software engineer.<br />
-        Passionate about Coding, Games and Anime.
-      </p>
-      <!-- 
-      <p>Click here to get a random movie quote:</p>
-      <button onclick="addMovieQuote()">Favourite movie quotes</button>
-      <div id="quote-container"></div> -->
+
+      <div class="About">
+        <h1>
+          NAM VU
+        </h1>
+        <p style="color: white">Software engineer</p>
+      </div>
+      <div id="Button">
+        <button onclick="getText()">Generate Text</button>
+        <p id="text-container"></p>
+        <!-- <p>Click <a href="/hello">here</a> for a new page</p> -->
+      </div>
     </div>
   </body>
 </html>

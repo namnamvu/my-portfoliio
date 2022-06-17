@@ -1,63 +1,79 @@
 * {
-    padding:0;
-    margin: 0;
+    padding:0px;
+    margin: 0px;
+    /* If you add padding, the element won't get bigger using border box */
     box-sizing: border-box;
 }
 body {
     width: 100%;
     height: 100%;
+    /* Fixed both side */
     overflow-x: hidden;
 }
-#content {
-    color: white;
-    display: flex;
-    flex-direction: column;
+.main {
     background-repeat: no-repeat;
-    background: linear-gradient(rgba(24, 24, 24, 0.6),rgba(22, 22, 22, 0.3)),url(Background.jpg);
+    background: linear-gradient(rgba(24, 24, 24, 0.9),rgba(22, 22, 22, 0.3)),url(Background.jpg);
     background-position: center;
+    /* Set height to full screen */
     height: 100vh;
+    /* Resize image to cover the container */
     background-size: cover;
     object-fit: cover;
-    position: relative;
-}
-h1 {
-    font-family: 'futura_m';
-    font-size: 5.5rem;
-    letter-spacing: 0.1em;
-    position: relative;
-    bottom: 120px;
-    left: 80px;
-}
-h1::after{
-    margin-top: 10px;
-    content: '';
-    display: block;
-	width: 10%;
-	height: 5px;
-    border-radius: 10px;
-	background-color: rgb(234, 101, 53);
 }
 
-hr {
-    position: relative;
-    bottom: 100px;
-    left: 150px;
-    content: '';
-    display: block;
-	width: 10%;
-	height: 5px;
-    border-radius: 10px;
-	background-color: rgb(234, 101, 53);
-    border: rgb(234, 101, 53);
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 22px;
+    padding-top: 30px;
+    padding-left: 60px;
+    padding-right: 40px;
 }
-p{
-    position: relative;
-    left: 80px;
-    bottom: 75px;
+
+.logo {
+    color:rgb(255, 255, 255);
+    font-size: 38px;
+    letter-spacing: 1px;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+}
+
+nav ul li {
+    list-style-type: none;
+    display: inline-block;
+    padding: 10px 25px;
+    font-size: 23px;
+}
+
+nav ul li a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: rgb(248, 55, 55);
+    transition: .5s;
+}
+
+.About {
+    position: absolute;
+    left: 8%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+h1 {
+    font-family: 'futura_m';
+    font-size: 6.9rem;
     letter-spacing: 0.1em;
-    font-size: 1.3rem;
-    line-height: 1.5;
-    z-index: 200;
+    color: aqua;
+}
+
+p{
+    letter-spacing: 0.1em;
+    font-size: 30px;
 }
 
 #greeting-container {
@@ -65,26 +81,33 @@ p{
 }
 
 #quote-container {
-    margin-top: 20px;
+    width: 500px;
+    color: white;
 }
 
 img {
-    width: 330px;
-    height: 420px;
+    width: 530px;
+    height: 530px;
     object-fit: cover;
     border-radius: 50%;
-    position:relative;
-    left: 950px;
-    top:90px;
-}
-.Link {
-    margin-left: 900px;
-    margin-top: 30px;
-    font-size: 22px;
+    padding: 8px;
+    background-color: lightblue;
+    position: absolute;
+    top: 20%;
+    left: 55%;
 }
 
-.Link a {
-    padding: 15px;
+#Button {
+    width: 300px;
+    position: relative;
+    left: 8%;
+    top: 53%;
     color: white;
-    text-decoration: none;
+}
+
+#Button button {
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: aqua;
+    color: black;
 }
