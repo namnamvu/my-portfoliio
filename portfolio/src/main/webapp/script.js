@@ -37,10 +37,22 @@ function addMovieQuote(){
     quoteContainer.innerText = quote;
 }
 
-async function getText(){
+async function getHi(){
     const responseFromServer = await fetch("/hello");
     const textFromResponse = await responseFromServer.text();
 
     const textContainer = document.getElementById("text-container");
     textContainer.innerText = textFromResponse;
+}
+
+
+async function getText(){
+    const responseFromServer = await fetch("/hello");
+    const textFromResponse = await responseFromServer.json();
+    const randomNum = Math.floor(Math.random()* Object.keys(textFromResponse).length);
+    const index = randomNum.toString();
+    const quote = textFromResponse[index];
+
+    const textContainer = document.getElementById("text-container");
+    textContainer.innerText = quote;
 }
