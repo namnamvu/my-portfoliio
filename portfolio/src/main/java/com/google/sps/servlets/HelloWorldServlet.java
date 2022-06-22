@@ -43,21 +43,4 @@ public class HelloWorldServlet extends HttpServlet {
     String json = gson.toJson(messages);
     return json;
   }
-
-//   private String convertToJson(ArrayList<String> messages) {
-//     String json = "{";
-//     json += "0";
-//     json += "\"" + messages.get(0) + "\"";
-//     json += ", ";
-//     json += "\"currentTime\": ";
-//     json += "\"" + serverStats.getCurrentTime() + "\"";
-//     json += ", ";
-//     json += "\"maxMemory\": ";
-//     json += serverStats.getMaxMemory();
-//     json += ", ";
-//     json += "\"usedMemory\": ";
-//     json += serverStats.getUsedMemory();
-//     json += "}";
-//     return json;
-//   }
 }
