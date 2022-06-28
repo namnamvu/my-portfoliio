@@ -37,6 +37,7 @@ function addMovieQuote(){
     quoteContainer.innerText = quote;
 }
 
+// Fetch the same url but not called -> still fine but redundant
 async function getHi(){
     const responseFromServer = await fetch("/hello");
     const textFromResponse = await responseFromServer.text();
