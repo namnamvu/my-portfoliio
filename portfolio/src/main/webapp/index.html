@@ -4,56 +4,149 @@
     <meta charset="UTF-8" />
     <title>My Portfolio</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Arima:wght@200;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" 
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="script.js"></script>
   </head>
   <body>
-    <div class="main">
+    <div class="first-page">
       <!-- Add all Link at the top of the page -->
       <nav>
         <h2 class="logo"><span style="color: aqua">Port</span>folio</h2>
         <ul>
           <li>
-            <a
-              href="https://www.linkedin.com/in/nam-vu-07a2a3234/"
-              target="_blank"
-              >LinkedIn
-            </a>
-          </li>
-          <li>
             <a href="https://github.com/namnamvu" target="_blank">GitHub</a>
           </li>
           <li><a href="images/me1.jpg" target="_blank">Gallery</a></li>
-          <li><a href="mailto:nvu1@fandm.edu">Email</a></li>
-          <li><a href="">About</a></li>
+          <li><a href="#project">Project</a></li>
+          <li><a href="#link-to-contact">Contact</a></li>
         </ul>
       </nav>
 
-      <img src="images/me1.jpg" alt="Me in New York" />
-
-      <div class="About">
-        <h1>
-          NAM VU
-        </h1>
-        <p style="color: white">Software engineer</p>
+      <div class="Intro">
+        <img src="images/me1.jpg" alt="Me in New York" />
+        <h1>NAM VU</h1>
+        <h2 style="color: white">Software engineer</h2>
+        <a href="#about-me">About me &#8594</a>
       </div>
-      <div id="Button">
-        <button onclick="getText()">Generate Text</button>
-        <p id="text-container"></p>
-        
-        <form action="/form-handler" method="POST">
-            <p>Enter your LinkedIn's URL</p>
-            <textarea name="text-input"></textarea>
-            <br/>
-            <input type="submit" />
-          </form>
-      </div>
+      <!-- <div id="Button">
+        <button onclick="addMovieQuote()">Generate Text</button>
+        <p id="quote-container"></p>
+      </div> -->
     </div>
+
+    <!-- ABOUT ME SECTION -->
+    <section class="About">
+      <div id="about-me" class="content-box">
+        <img src="images/future.jpeg" alt="A coffee picture">
+        <div class="about-text">
+          <h2>Me in a nut-shell ?</h2>
+            <p>I am a computer science student at Franklin & Marshall College. 
+              I have a passion for coding and I love the infinite possibilities 
+              that technology provides us.
+            </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MY PROJECT SECTION -->
+    <section class="project">
+      <div class="section-title">
+        <h2 id="project">MY PROJECTS</h2>
+      </div>
+
+      <!-- Box containing 3 cards -->
+      <div class="box">
+        <div class="card">
+          <img src="images/FLyWorld.png" alt="A game of fly-moving world">
+          <h5>Fly-World Game</h5>
+          <div class="project-content">
+            <p>A java games where users can control the fly to reach home destination while dodging the frogs and spiders</p>
+
+            <p>
+              <a href="https://github.com/namnamvu/FlyWorld" target="_blank">View code</a>
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="images/MealPlanApp.png" alt="MealPlanApp logo">
+          <h5>MealPlan App</h5>
+          <div class="project-content">
+            <p>Full-stack MealPlan App that offers F&M students more control and visibility over their meal plan data </p>
+
+            <p>
+              <a href="https://github.com/namnamvu/MealPlanApp" target="_blank">View code</a>
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="images/TestResult.png" alt="A page of Test result display">
+          <h5>Testing Framework</h5>
+          <div class="project-content">
+            <p>A framework for unit test that has html output. Allow users to define, execute and report tests for any piece of software</p>
+
+            <p>
+              <a href="https://github.com/namnamvu/Test-Framework" target="_blank">View code</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION CONTACT -->
+    <section class="contact-me" id="link-to-contact">
+      <div class="section-title">
+        <h2>
+          CONTACT ME
+        </h2>
+      </div>
+  
+      <div class="content-box">
+        <div class="contact-card">
+          <div class="contact-heading">
+            <h3>By Form</h3>
+          </div>
+
+          <div class="contact-form">
+            <form action="/form-handler" method="POST">
+              <input type="text" name="name-input" class="contact-input" placeholder="Name">
+              <input type="text" name="phone-number" class="contact-input" placeholder="Phone number">
+              <textarea type="text" name="message-input" class=" contact-input message-input" placeholder="Your message"></textarea>
+              <br/>
+              <div id="send">
+                <input type="submit" value="SEND"/>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-heading">
+            <h3>By other media</h3>
+          </div>
+
+          <div class="social-menu">
+            <ul>
+              <li><a href="https://www.instagram.com/vptnamnam/"  target="_blank"> <i class="fa-brands fa-instagram"></i></a></li>
+              <li><a href="https://www.linkedin.com/in/nam-vu-07a2a3234/"  target="_blank">  <i class="fa-brands fa-linkedin"></i></a></li>
+              <li><a href="mailto:nvu1@fandm.edu">  <i class="fa-solid fa-envelope"></i></a></li>
+              <li><a href="https://www.facebook.com/profile.php?id=100024632314236"  target="_blank">  <i class="fa-brands fa-facebook"></i></a></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
   </body>
 </html>
 
-<!-- Add a couple paragraphs explaining your background and what makes you you.
-Add a list of projects you've worked on.
-Add a link to your LinkedIn and GitHub profiles.
-Add images! Create a gallery of your favorite places, or selfies, or pictures of your pets.
-Add a couple paragraphs explaining what you enjoy photographing.
-Add some blog posts explaining one of your hidden talents -->
+

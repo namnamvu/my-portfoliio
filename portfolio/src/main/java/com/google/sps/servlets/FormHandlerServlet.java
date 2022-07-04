@@ -20,26 +20,41 @@ public class FormHandlerServlet extends HttpServlet {
   public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
     // getParameter only works if the parameter is a name in html, otherwise null
-    // Sanitize user input to remove HTML tags and Javascript
-    String textValue = Jsoup.clean(request.getParameter("text-input"), Safelist.none());
+    String name = sanitizeUI(request, "name-input");
+    String phoneNum = sanitizeUI(request, "phone-number");
+    String messages = sanitizeUI(request, "message-input");
     long timestamp = System.currentTimeMillis();
-
+    
     Datastore dataStore = DatastoreOptions.getDefaultInstance().getService();
-    KeyFactory keyFactory = dataStore.newKeyFactory().setKind("Linkedin");
+    KeyFactory keyFactory = dataStore.newKeyFactory().setKind("Contact");
 
     FullEntity linkEntity = 
         Entity.newBuilder(keyFactory.newKey())
-            .set("Link", textValue)
+            .set("Name", name)
+            .set("Phone number", phoneNum)
+            .set("Messages", messages)
             .set("Timestamp", timestamp)
             .build();
     dataStore.put(linkEntity);
+
     // Print the value so you can see it in the server logs.
-    System.out.println("You submitted: " + textValue);
+    System.out.println("You submitted: " + name);
+    System.out.println("You submitted: " + phoneNum);
+    System.out.println("You submitted: " + messages);
 
     // Write the value to the response so the user can see it.
-    response.getWriter().println("You submitted: " + textValue);
+    response.getWriter().println("You submitted: " + name);
+    response.getWriter().println("You submitted: " + phoneNum);
+    response.getWriter().println("You submitted: " + phoneNum);
 
     // Redirect user to another page
-    response.sendRedirect("https://nvu-sps-summer22.appspot.com/");
+    response.sendRedirect("https://nvu-sps-summer22.appspot.com/#link-to-contact");
+  }
+
+  /**
+   * Sanitize user input to remove HTML tags and Javascript
+   */
+  private String sanitizeUI (HttpServletRequest request, String input){
+    return Jsoup.clean(request.getParameter(input), Safelist.none());
   }
 }
