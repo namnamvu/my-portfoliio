@@ -1,21 +1,29 @@
 * {
     padding:0px;
     margin: 0px;
-    /* If you add padding, the element won't get bigger using border box */
+    /* If you add padding, the element won't get bigger inside the box */
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    
 }
+
+html {
+    /* When click on a link to a section in page, it will scroll down */
+    /* Safari does not support this behavior */
+    scroll-behavior: smooth;
+}
+
 body {
-    width: 100%;
-    height: 100%;
     /* Fixed both side */
     overflow-x: hidden;
 }
-.main {
+.first-page {
     background-repeat: no-repeat;
-    background: linear-gradient(rgba(24, 24, 24, 0.9),rgba(22, 22, 22, 0.3)),url(Background.jpg);
+    background: linear-gradient(rgba(24, 24, 24, 0.9),rgba(22, 22, 22, 0.4)),url(images/Background.jpg);
     background-position: center;
     /* Set height to full screen */
     height: 100vh;
+    width: 100vw;
     /* Resize image to cover the container */
     background-size: cover;
     object-fit: cover;
@@ -25,17 +33,17 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-size: 22px;
+    font-size: 21px;
     padding-top: 30px;
     padding-left: 60px;
     padding-right: 40px;
+    font-weight: bold;
 }
 
 .logo {
     color:rgb(255, 255, 255);
     font-size: 38px;
     letter-spacing: 1px;
-    font-family: 'Times New Roman', Times, serif;
     font-style: italic;
 }
 
@@ -43,49 +51,64 @@ nav ul li {
     list-style-type: none;
     display: inline-block;
     padding: 10px 25px;
-    font-size: 23px;
 }
 
 nav ul li a {
     color: rgb(255, 255, 255);
     text-decoration: none;
-    font-weight: bold;
 }
 
 nav ul li a:hover {
-    color: rgb(248, 55, 55);
-    transition: .5s;
+    color: aqua;
+    border-bottom: 2px solid aqua;
+    transition: .3s;
 }
 
-.About {
+.Intro h1 {
     position: absolute;
     left: 8%;
     top: 50%;
     transform: translateY(-50%);
-}
-
-h1 {
-    font-family: 'futura_m';
-    font-size: 6.9rem;
     letter-spacing: 0.1em;
     color: aqua;
+    font-family: 'Arima', cursive;
+    font-size: 110px;
 }
 
-p{
+.Intro h2 {
+    position: absolute;
+    left: 8%;
+    top: 61%;
+    transform: translateY(-50%);
     letter-spacing: 0.1em;
-    font-size: 30px;
+    font-size: 32px;
+    font-weight: lighter;
+    font-family: 'Arima', cursive;
 }
 
-#greeting-container {
-  margin-top: 20px;
+.Intro a {
+    text-decoration: none;
+    color: #15f4ee;
+    position: absolute;
+    top: 75%;
+    left: 8%;
+    font-size: 20px;
+    border: 2px solid #00e8eb;
+    padding: 20px 50px;
+    border-radius: 30px;
+    transition: .4s;
+    letter-spacing: 5px;
+    
 }
 
-#quote-container {
-    width: 500px;
-    color: white;
+.Intro a:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 50px 0 #15f4ee inset, 0 5px 50px 0 #15f4ee,
+                0 5px 50px 0 #15f4ee inset, 0 5px 50px 0 #15f4ee;
+    text-shadow: 0 0 5px 0 #15f4ee, 0 0 5px 0 #15f4ee;
 }
 
-img {
+.Intro img {
     width: 530px;
     height: 530px;
     object-fit: cover;
@@ -94,20 +117,244 @@ img {
     background-color: lightblue;
     position: absolute;
     top: 20%;
-    left: 55%;
+    left: 59%;
 }
 
-#Button {
-    width: 300px;
-    position: relative;
-    left: 8%;
-    top: 53%;
+/* Set width for the whole ABOUT section and background color */
+.About {
+    width: 100%;
+    padding: 140px 0px;
+    background-color: black;
+    color: white;
+}
+.About img {
+    width: 500px;
+    height: auto;
+    object-fit: cover;
+    filter: brightness(80%);
+    box-shadow: 0 0 100px 0 rgb(0, 179, 179);
+}
+
+/* Text box width */
+.about-text {
+    width: 600px;
+}
+
+/* Set width for the content box */
+.content-box {
+    width: 1400px;
+    max-width: 90%;
+    /* top - right */
+    margin: 0 auto;
+    display: flex;
+    /* Change in up/down */
+    align-items: center;
+    /* Change in row */
+    justify-content: space-around;
+}
+
+.content-box h2 {
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+.content-box p {
+    letter-spacing: 1px;
+    line-height: 38px;
+    font-size: 20px;
+    font-weight: lighter;
+}
+
+.project {
+    background-color: black;
+    width: 100%;
+    padding: 30px 0px;
     color: white;
 }
 
-#Button button {
-    padding: 10px;
-    margin-bottom: 10px;
-    background-color: aqua;
+.section-title h2{
+    color: white;
+    font-size: 60px;
+    width: 1200px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+}
+
+.card {
+    height: 580px;
+    width: 335px;
+    background: #191919;
+    border-radius: 20px;
+    margin: 45px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 10px 0 aqua;
+}
+
+.card img {
+    width: 340px;
+    height: 230px;
+    border-radius: 20px;
+    border: 10px solid white;
+}
+
+.card h5 {
+    font-size: 25px;
+    padding-top: 10px;
+    margin-bottom: 12px;
+    color: aqua;
+    text-align: center;
+}
+
+.project-content p {
+    text-align: center;
+    padding: 25px 32px;
+    font-size: 17px;
+    line-height: 30px;
+}
+
+.project-content a {
+    text-decoration: none;
+    background-color: #191919;
+    color: white;
+    border: 2px solid #42FBF2;
+    position: absolute;
+    border-radius: 20px;
+    font-weight: bold;
+    transition: .4s;
+    left: 17%;
+    padding: 13px 65px;
+}
+
+.project-content a:hover {
+    background-color: #42FBF2;
+    transform: scale(1.2);
+}
+
+/* Background for whole contact page */
+.contact-me{
+    background-color: black;
+    width: 100%;
+    padding: 60px 0px;
+    color: white;
+    margin: 0 auto;
+}
+
+/* Include contact-heading */
+.contact-card {
+    margin-top: 10px;
+}
+
+/* Heading for different contact type */
+.contact-heading {
+    text-align: center;
+    font-size: 30px;
+    color: aqua;
+    margin-bottom: 50px;
+}
+
+/* The box surrounding form */
+.contact-form {
+    height: 500px;
+    width: 505px;
+    background: #191919;
+    border-radius: 20px;
+    margin: 20px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 20px 0 rgb(138, 137, 137);
+}
+
+/* Form inside box */
+.contact-me form {
+    margin: 50px;
+    padding-left: 5px;
+}
+
+/* Each text input box */
+.contact-input {
+    width: 400px;
+    height: 50px;
+    margin-bottom: 30px;
+    padding: 10px 10px;
+    border-radius: 14px;
+    font-size: 15px;
+}
+
+.message-input {
+    height: 150px;
+    padding-top: 10px;
+}
+
+/* Div for send button */
+#send {
+    text-align: center;
+}
+
+#send input {
+    font-size: 20px;
+    border: 2px solid #00e8eb;
+    padding: 15px 50px;
+    border-radius: 30px;
+    transition: .4s;
+    background-color: #191919;
+    color: #15f4ee;
+    letter-spacing: 5px;
+}
+
+#send input:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px 0 #15f4ee;
+}
+
+/* Social media */
+.social-menu {
+    height: 510px;
+    width: 555px;
+    margin: 20px;
+}
+
+.social-menu ul {
+    position: absolute;
+    display: flex;   
+    margin: 15px;
+    padding-top: 150px;
+}
+
+.social-menu ul li {
+    list-style-type: none;
+    text-align: center;
+    margin: 30px;
+}
+
+.social-menu ul li i {
+    font-size: 40px;
+    line-height: 80px;
     color: black;
 }
+
+.social-menu ul li a {
+    position: relative;
+    display: block;
+    width: 80px;
+    height: 80px;
+    background-color: white;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 5px #15f4ee;
+    transition: .4s;
+}
+
+.social-menu ul li a:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px 10px #15f4ee;
+}
+
+
